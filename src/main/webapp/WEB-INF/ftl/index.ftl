@@ -3,56 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>东南大学公共卫生学院</title>
-<style type="text/css">
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}body,button,input,select,textarea{font:14px arial,\5b8b\4f53,sans-serif;}h1,h2,h3,h4,h5,h6{font-size:100%;}address,cite,dfn,em,var{font-style:normal;}code,kbd,pre,samp{font-family:courier new,courier,monospace;}small{font-size:14px;}ul,ol{list-style:none;}a{text-decoration:none;}a:hover{text-decoration:underline;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}legend{color:#000;}fieldset,img{border:0;}button,input,select,textarea{font-size:100%;}table{border-collapse:collapse;border-spacing:0;}.col-main{float:left;width:100%;min-height:1px;}.hidden{display:none;}.invisible{visibility:hidden;}
-.clear:after{content:'\20';display:block;height:0;clear:both;}.clear{*zoom:1;font-size:0;clear:both;}
-a:link,a:visited{color:#000;text-decoration:none;}
-a:hover{color:#c00;text-decoration:underline;}
-img{border:0;-ms-interpolation-mode:bicubic;}
-.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-* html>body .clearfix{display:inline-block;width:100%;}
-* html .clearfix{/* Hides from IE-mac \*/ height:1%;/* End hide from IE-mac */ }
-*+html .clearfix{min-height:1%;}
-
-.main{ width:980px;margin:0 auto;}
-.header{ width:980px; height:100px;}
-.header .logo{float:left; width:270px; height:100px;}
-.header .nav{float:left; width:710px; height:100px;}
-.litt_nav{ width:710px; height:30px; background:#9e7f6d;}
-.litt_nav ul{float:right; height:30px; margin-right:100px; display:inline;}
-.litt_nav ul li{float:left; padding:0 5px; line-height:30px;}
-.litt_nav ul li a{ color:#dcc6b9; font-size:12px;}
-.main_nav{width:710px; height:70px; background:url(images/nav_bg.gif) no-repeat 0 61px;}
-.main_nav ul{padding-left:20px;}
-.main_nav ul li{float:left;line-height:70px;}
-.main_nav ul li a{ color:#7c7b77; font-size:16px; padding:25px 5px 17px 5px; font-weight:bold;}
-.main_nav ul li a:hover{ background:#efeeec; text-decoration:none; border-bottom:9px solid #f3db33;}
-.post{ width:980px; height:200px; margin-top:14px;}
-.container{ width:750px; height:500px; margin:10px auto 0; font-size:12px;}
-.container .nleft{float:left; width:225px; height:500px; margin:0 6px; display:inline; }
-.container .nleft .update_tit{width:225px; height:25px; margin-top:27px; background:url(images/update.gif) no-repeat 0 0;}
-.update{ width:225px; padding-top:6px;}
-.higher{ margin-top:8px;}
-.update li{width:220px; height:20px; padding-left:5px; line-height:20px; background:url(images/list.gif) no-repeat 1px 8px;}
-.title{ float:left; width:160px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
-.pdate{float:left;width:32px; height:20px; padding-left:8px; color:#f4e258;}
-.gray{ color:#000;}
-.new{ float:left;}
-.container .nleft .pic_tit{width:225px; height:17px; margin-top:27px; background:url(images/pic_tit.gif) no-repeat 0 0;}
-.pic{ width:202px; height:138px; border:1px solid #6eaace; margin-top:18px;}
-.friend_link{ margin-top:25px;}
-.friend_link select{ border:1px solid #d3c5bc; color:#f4e258;}
-.container .nright{float:left; width:500px; height:500px; padding-left:10px;}
-.container .nright .wraper{float:left; width:250px; margin-top:25px; display:inline;}
-.container .nright .collage_tit{ width:200px; height:18px; background:url(images/collage.gif) no-repeat 0 0;}
-.container .nright .news_tit{width:200px; height:18px; background:url(images/collagenews.gif) no-repeat 0 0;}
-.container .nright .deu_tit{ width:200px; height:17px; background:url(images/eduinfo.gif) no-repeat 0 0;}
-.container .nright .student_tit{ width:200px; height:17px; background:url(images/studentwork.gif) no-repeat 0 0;}
-.footer{width:100%; height:90px; background:#503f37; color:#9c8e85; text-align:center; font-size:10px;}
-.footer .p1{ font-size:14px; padding:20px 0 6px;}
-</style>
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-
 <body>
 	<div class="main">
 		<div class="header">

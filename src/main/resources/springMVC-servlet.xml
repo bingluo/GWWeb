@@ -20,6 +20,8 @@
 	<context:component-scan base-package="cn.edu.seu.GWWeb.controller"/>
 	<mvc:annotation-driven/>
 	<mvc:resources location="/assets/images/" mapping="/images/**"/>
+	<mvc:resources location="/assets/js/" mapping="/js/**"/>
+	<mvc:resources location="/assets/css/" mapping="/css/**"/>
 	<bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="location" value="classpath:freemarker.properties"/>
 	</bean>
