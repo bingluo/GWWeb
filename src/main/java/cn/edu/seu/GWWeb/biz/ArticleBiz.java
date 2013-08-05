@@ -18,31 +18,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import cn.edu.seu.GWWeb.constant.Constants;
-import cn.edu.seu.whitemirror.dto.SectionDTO;
+import cn.edu.seu.whitemirror.dto.ArticleBriefDTO;
 
 /**
  * @author snow
  *
  */
 @Service
-public class SectionBiz {
+public class ArticleBiz {
 	
-	private static Logger logger = LoggerFactory.getLogger(SectionBiz.class);
+	private static Logger logger = LoggerFactory.getLogger(ArticleBiz.class);
 	
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	public List<SectionDTO> getIndexSections() {
-		String url = Constants.WHITE_MIRROR_URL + Constants.APP_URL + "/sections";
+	public List<ArticleBriefDTO> getRecentlyArticles() {
+		String url = Constants.WHITE_MIRROR_URL + Constants.APP_URL + "/recentlyArticles";
 		HttpHeaders requestHeaders = new HttpHeaders();
 		requestHeaders.setContentType(new MediaType("application", "json"));
 		requestHeaders.add("API-Key", Constants.API_KEY);
 		HttpEntity<?> requestEntity = new HttpEntity<Object>(requestHeaders);
 		try {
-			ResponseEntity<SectionDTO[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, SectionDTO[].class);
+			ResponseEntity<ArticleBriefDTO[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, ArticleBriefDTO[].class);
 			return Arrays.asList(responseEntity.getBody());
 		} catch (Exception ex) {
-			logger.error("Exception in SectionBiz.getIndexSections, ex: ", ex);
+			logger.error("Exception in ArticleBiz.getRecentlyArticles, ex: ", ex);
 			return null;
 		}
 	}

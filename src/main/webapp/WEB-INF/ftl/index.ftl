@@ -39,14 +39,17 @@
 				<div>
 					<div class="update_tit"></div>
 					<ul class="update">
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div><div class="new"><img src="images/news.gif" width="20" height="11" /></div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
+						<#if recentlyArticleList??>
+						<#list recentlyArticleList as article>
+						<li>
+							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="pdate">${article.createDate?string("MM-dd")}</div>
+							<#if article_index <= 1>
+							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							</#if>
+						</li>
+						</#list>
+						</#if>
 					</ul>
 				</div>
 				<div>
