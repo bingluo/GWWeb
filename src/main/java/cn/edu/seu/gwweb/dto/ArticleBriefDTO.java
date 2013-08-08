@@ -1,28 +1,24 @@
 /**
  * 
  */
-package cn.edu.seu.whitemirror.dto;
+package cn.edu.seu.gwweb.dto;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author snow
  *
  */
-public class ArticleDTO implements Serializable {
+public class ArticleBriefDTO implements Serializable  {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 	private long id;
 	private String title;
 	private String author;
-	private String context;
-	private List<String> attachmentList;
 	private Date createDate;
 	
 	/**
@@ -60,30 +56,6 @@ public class ArticleDTO implements Serializable {
 	 */
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-	/**
-	 * @return the context
-	 */
-	public String getContext() {
-		return context;
-	}
-	/**
-	 * @param context the context to set
-	 */
-	public void setContext(String context) {
-		this.context = context;
-	}
-	/**
-	 * @return the attachmentList
-	 */
-	public List<String> getAttachmentList() {
-		return attachmentList;
-	}
-	/**
-	 * @param attachmentList the attachmentList to set
-	 */
-	public void setAttachmentList(List<String> attachmentList) {
-		this.attachmentList = attachmentList;
 	}
 	/**
 	 * @return the createDate

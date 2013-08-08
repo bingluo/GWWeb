@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.edu.seu.whitemirror.dto;
+package cn.edu.seu.gwweb.dto;
 
 import java.io.Serializable;
 import java.util.List;

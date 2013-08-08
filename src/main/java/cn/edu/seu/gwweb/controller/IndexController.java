@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.edu.seu.GWWeb.controller;
+package cn.edu.seu.gwweb.controller;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cn.edu.seu.GWWeb.biz.ArticleBiz;
-import cn.edu.seu.GWWeb.biz.SectionBiz;
-import cn.edu.seu.whitemirror.dto.ArticleBriefDTO;
-import cn.edu.seu.whitemirror.dto.SectionDTO;
+import cn.edu.seu.gwweb.biz.ArticleBiz;
+import cn.edu.seu.gwweb.biz.SectionBiz;
+import cn.edu.seu.gwweb.dto.ArticleBriefDTO;
+import cn.edu.seu.gwweb.dto.SectionDTO;
 
 /**
  * @author snow

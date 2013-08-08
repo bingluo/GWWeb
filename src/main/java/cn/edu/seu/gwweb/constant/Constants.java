@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.edu.seu.GWWeb.constant;
+package cn.edu.seu.gwweb.constant;
 
 /**
  * @author snow

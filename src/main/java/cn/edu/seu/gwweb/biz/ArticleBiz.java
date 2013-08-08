@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.edu.seu.GWWeb.biz;
+package cn.edu.seu.gwweb.biz;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import cn.edu.seu.GWWeb.constant.Constants;
-import cn.edu.seu.whitemirror.dto.ArticleBriefDTO;
+import cn.edu.seu.gwweb.constant.Constants;
+import cn.edu.seu.gwweb.dto.ArticleBriefDTO;
 
 /**
  * @author snow

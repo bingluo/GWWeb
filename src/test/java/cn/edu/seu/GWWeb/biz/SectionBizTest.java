@@ -13,7 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 
-import cn.edu.seu.whitemirror.dto.SectionDTO;
+import cn.edu.seu.gwweb.biz.SectionBiz;
+import cn.edu.seu.gwweb.dto.SectionDTO;
 
 /**
  * @author snow
@@ -27,7 +28,7 @@ public class SectionBizTest {
 	@Autowired
 	private SectionBiz sectionBiz;
 	/**
-	 * Test method for {@link cn.edu.seu.GWWeb.biz.SectionBiz#getIndexSections()}.
+	 * Test method for {@link cn.edu.seu.GWWeb.constant.gwweb.biz.SectionBiz#getIndexSections()}.
 	 */
 	@Test
 	public void testGetIndexSections() {
