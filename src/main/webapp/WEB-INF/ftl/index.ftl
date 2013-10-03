@@ -19,17 +19,28 @@
 					</ul>
 				</div><!--/litt_nav-->
 				<div class="main_nav">
+					<#if menuList??>
 					<ul>
-						<li><a href="#">首页</a></li>
-						<li><a href="#">院系概况</a></li>
-						<li><a href="#">学科建设</a></li>
-						<li><a href="#">师资队伍</a></li>
-						<li><a href="#">科学研究</a></li>
-						<li><a href="#">人才培养</a></li>
-						<li><a href="#">党建公会</a></li>
-						<li><a href="#">学生工作</a></li>
-						<li><a href="#">校友园地</a></li>
+						<li><a href="#" onmouseover="showSelect(0)">首页</a></li>
+						<#list menuList as menuItemId>
+						<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
+						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
+						</#if>
+						</#list>
 					</ul>
+					<#list menuList as menuItemId>
+					<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
+					<dl class="navtwo navtwo${menuItemId_index + 1}" id="nav${menuItemId_index + 1}">
+					<#assign menuItem = menuSectionMap[menuItemId]>
+						<#if menuItem.articleList??>
+						<#list menuItem.articleList as article>
+						<dd <#if article_index == menuItem.articleList?size - 1>class="noborder"</#if>><a href="#">${article.title}</a></dd>
+						</#list>
+						</#if>
+					</#if>
+					</dl>
+					</#list>
+					</#if>
 				</div><!--/main_nav-->
 			</div><!--/nav-->
 		</div><!--/header-->
@@ -70,53 +81,65 @@
 				<div class="wraper">
 					<div class="collage_tit"></div>
 					<ul class="update higher">
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
+					<#if collegeNotice??>
+						<#list collegeNotice as article>
+						<li>
+							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="pdate">${article.createDate?string("MM-dd")}</div>
+							<#if article_index <= 1>
+							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							</#if>
+						</li>
+						</#list>
+					</#if>
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
 					<div class="news_tit"></div>
 					<ul class="update higher">
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
+					<#if collegeNews??>
+						<#list collegeNews as article>
+						<li>
+							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="pdate">${article.createDate?string("MM-dd")}</div>
+							<#if article_index <= 1>
+							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							</#if>
+						</li>
+						</#list>
+					</#if>
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
 					<div class="deu_tit"></div>
 					<ul class="update higher">
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
+					<#if teachingAffairs??>
+						<#list teachingAffairs as article>
+						<li>
+							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="pdate">${article.createDate?string("MM-dd")}</div>
+							<#if article_index <= 1>
+							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							</#if>
+						</li>
+						</#list>
+					</#if>
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
 					<div class="student_tit"></div>
 					<ul class="update higher">
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
-						<li><div class="title"><a href="#">关于印发《东南大学博士研究生指导教师遴选办法》的通知</a></div><div class="pdate gray">04-23</div></li>
+					<#if studentWorkNew??>
+						<#list studentWorkNew as article>
+						<li>
+							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="pdate">${article.createDate?string("MM-dd")}</div>
+							<#if article_index <= 1>
+							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							</#if>
+						</li>
+						</#list>
+					</#if>
 					</ul>
 				</div><!--/wraper-->
 			</div><!--/nright-->
@@ -126,5 +149,16 @@
 		<p class="p1">中国&nbsp;&nbsp;&#8226;&nbsp;南京&nbsp;&#8226;&nbsp;东南大学公共卫生学院</p>
 		<p>Copyright&nbsp;&nbsp;2013&nbsp;&nbsp;东南大学公共卫生学院&nbsp;&nbsp;版权所有&nbsp;&nbsp;All&nbsp;&nbsp;Right</p>
 	</div>
+<script type="text/javascript">
+function showSelect(id){
+	for(i=1;i<=7;i++){
+		if(i==id){
+			document.getElementById("nav"+i).style.display="block";
+		}else{
+			document.getElementById("nav"+i).style.display="none";
+		}
+	}
+}
+</script>
 </body>
 </html>
