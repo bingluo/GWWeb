@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>东南大学公共卫生学院</title>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
 </head>
 <body>
 	<div class="main">
 		<div class="header">
-			<div class="logo"><img src="images/logo.gif" width="270" height="100" /></div>
+			<div class="logo"><img src="${rc.getContextPath()}/images/logo.gif" width="270" height="100" /></div>
 			<div class="nav">
 				<div class="litt_nav">
 					<ul>
@@ -21,7 +21,7 @@
 				<div class="main_nav">
 					<#if menuList??>
 					<ul>
-						<li><a href="#" onmouseover="showSelect(0)">首页</a></li>
+						<li><a href="${rc.getContextPath()}/index">首页</a></li>
 						<#list menuList as menuItemId>
 						<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
 						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
@@ -34,7 +34,9 @@
 					<#assign menuItem = menuSectionMap[menuItemId]>
 						<#if menuItem.articleList??>
 						<#list menuItem.articleList as article>
-						<dd <#if article_index == menuItem.articleList?size - 1>class="noborder"</#if>><a href="#">${article.title}</a></dd>
+						<dd <#if article_index == menuItem.articleList?size - 1>class="noborder"</#if>>
+							<a href="${rc.getContextPath()}/pages/${menuItem.id}/articles/${article.id}">${article.title}</a>
+						</dd>
 						</#list>
 						</#if>
 					</#if>
@@ -44,7 +46,7 @@
 				</div><!--/main_nav-->
 			</div><!--/nav-->
 		</div><!--/header-->
-		<div class="post"><img src="images/post.jpg" width="980" height="200" /></div>
+		<div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="980" height="200" /></div>
 		<div class="container">
 			<div class="nleft">
 				<div>
@@ -56,7 +58,7 @@
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
-							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
 							</#if>
 						</li>
 						</#list>
@@ -87,7 +89,7 @@
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
-							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
 							</#if>
 						</li>
 						</#list>
@@ -103,7 +105,7 @@
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
-							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
 							</#if>
 						</li>
 						</#list>
@@ -119,7 +121,7 @@
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
-							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
 							</#if>
 						</li>
 						</#list>
@@ -135,7 +137,7 @@
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
-							<div class="new"><img src="images/news.gif" width="20" height="11" /></div>
+							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
 							</#if>
 						</li>
 						</#list>
