@@ -55,7 +55,7 @@
 						<#if recentlyArticleList??>
 						<#list recentlyArticleList as article>
 						<li>
-							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/sections/${article.sectionId}/articles/${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -81,10 +81,10 @@
 			</div><!--/nleft-->
 			<div class="nright">
 				<div class="wraper">
-					<div class="collage_tit"></div>
+					<div class="collage_tit" style="cursor: pointer;" <#if collegeNotice??>onclick="navTo(${collegeNotice.id})"</#if>></div>
 					<ul class="update higher">
 					<#if collegeNotice??>
-						<#list collegeNotice as article>
+						<#list collegeNotice.articleList as article>
 						<li>
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
@@ -97,10 +97,10 @@
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
-					<div class="news_tit"></div>
+					<div class="news_tit" style="cursor: pointer;" <#if collegeNews??>onclick="navTo(${collegeNews.id})"</#if>></div>
 					<ul class="update higher">
 					<#if collegeNews??>
-						<#list collegeNews as article>
+						<#list collegeNews.articleList as article>
 						<li>
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
@@ -113,10 +113,10 @@
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
-					<div class="deu_tit"></div>
+					<div class="deu_tit" style="cursor: pointer;" <#if teachingAffairs??>onclick="navTo(${teachingAffairs.id})"</#if>></div>
 					<ul class="update higher">
 					<#if teachingAffairs??>
-						<#list teachingAffairs as article>
+						<#list teachingAffairs.articleList as article>
 						<li>
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
@@ -129,10 +129,10 @@
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
-					<div class="student_tit"></div>
+					<div class="student_tit" style="cursor: pointer;" onclick="navToStudentWork()"></div>
 					<ul class="update higher">
 					<#if studentWorkNew??>
-						<#list studentWorkNew as article>
+						<#list studentWorkNew.articleList as article>
 						<li>
 							<div class="title"><a href="${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
@@ -161,6 +161,13 @@ function showSelect(id){
 		}
 	}
 }
+function navTo(sectionId) {
+    window.location.href = "${rc.getContextPath()}/sections/" + sectionId;
+}
+function navToStudentWork() {
+    window.location.href = "${rc.getContextPath()}/student_work";
+}
+
 </script>
 </body>
 </html>

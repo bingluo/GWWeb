@@ -93,6 +93,7 @@
 						</ul>
 					</td>
 					<td valign="top">
+                        <#if article ??>
 						<p id="article-title">${article.title}</p>
 						<p id="article-info">作者：${article.author} , 修改时间：${article.createDate?string("yyyy-MM-dd")}</p>
 						<div id="article-context">
@@ -106,6 +107,7 @@
 						</#list>
 						</div>
 						</#if>
+                        </#if>
 					</td>
 				</tr>
 			</table><!--list-->
