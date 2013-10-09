@@ -254,6 +254,7 @@ public class MainController {
 					articleListCount = resTfulBiz.countArticleBrief(currentSection.getId());
 				}
 			}
+			modelMap.put("sectionId", sectionId);
 			modelMap.put("menuSectionMap", menuSectionMap);
 			modelMap.put("currentSection", currentSection);
 			modelMap.put("articleList", articleList);

@@ -24,7 +24,7 @@
 						<li><a href="${rc.getContextPath()}/index">首页</a></li>
 						<#list menuList as menuItemId>
 						<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
-						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
+						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1}) onmouseout="hideSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
 						</#if>
 						</#list>
 					</ul>
@@ -86,7 +86,7 @@
 					<#if collegeNotice??>
 						<#list collegeNotice.articleList as article>
 						<li>
-							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/sections/${collegeNotice.id}/articles/${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -102,7 +102,7 @@
 					<#if collegeNews??>
 						<#list collegeNews.articleList as article>
 						<li>
-							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/sections/${collegeNews.id}/articles/${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -118,7 +118,7 @@
 					<#if teachingAffairs??>
 						<#list teachingAffairs.articleList as article>
 						<li>
-							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/sections/${teachingAffairs.id}/articles/${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -134,7 +134,7 @@
 					<#if studentWorkNew??>
 						<#list studentWorkNew.articleList as article>
 						<li>
-							<div class="title"><a href="${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/sections/${studentWorkNew.id}/articles/${article.id}">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -157,6 +157,13 @@ function showSelect(id){
 		if(i==id){
 			document.getElementById("nav"+i).style.display="block";
 		}else{
+			document.getElementById("nav"+i).style.display="none";
+		}
+	}
+}
+function hideSelect(id) {
+	for(i=1;i<=7;i++){
+		if(id==i) {
 			document.getElementById("nav"+i).style.display="none";
 		}
 	}
