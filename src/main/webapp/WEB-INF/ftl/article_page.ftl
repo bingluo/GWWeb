@@ -9,7 +9,7 @@
 	width: 900px;
 }
 #nav-left-head {
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 .nav-left-item {
 	padding-bottom: 10px;
@@ -95,7 +95,7 @@
 					<td valign="top">
                         <#if article ??>
 						<p id="article-title">${article.title}</p>
-						<p id="article-info">作者：${article.author} , 修改时间：${article.createDate?string("yyyy-MM-dd")}</p>
+						<!--<p id="article-info">作者：${article.author} , 修改时间：${article.createDate?string("yyyy-MM-dd")}</p>-->
 						<div id="article-context">
 						${article.context}
 						</div>

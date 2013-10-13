@@ -24,7 +24,7 @@
 						<li><a href="${rc.getContextPath()}/index">首页</a></li>
 						<#list menuList as menuItemId>
 						<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
-						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1}) onmouseout="hideSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
+						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
 						</#if>
 						</#list>
 					</ul>
@@ -157,13 +157,6 @@ function showSelect(id){
 		if(i==id){
 			document.getElementById("nav"+i).style.display="block";
 		}else{
-			document.getElementById("nav"+i).style.display="none";
-		}
-	}
-}
-function hideSelect(id) {
-	for(i=1;i<=7;i++){
-		if(id==i) {
 			document.getElementById("nav"+i).style.display="none";
 		}
 	}

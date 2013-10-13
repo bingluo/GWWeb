@@ -4,6 +4,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>东南大学公共卫生学院 <#if currentSection ??> : ${currentSection.title}</#if></title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
+    <style type="text/css">
+    #article-title {
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+    #article-info {
+        font-size: 15px;
+        padding-bottom: 15px;
+        font-style: italic;
+    }
+    #article-context {
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+    #article-attachment {
+        padding-top: 15px;
+        font-size: 12px;
+        font-style: italic;
+    }
+    </style>
 </head>
 <body>
 <div class="main">
@@ -57,7 +77,9 @@
                 <div id="article-attachment">
                     <p>附件列表：</p>
                     <#list article.attachmentList as attachment>
-                        <a href ="${attachment}" target="blank">${attachment}</a>
+                        <#assign lIndex = attachment?last_index_of("/")>
+                        <a href ="${attachment}" target="blank">${attachment?substring(lIndex + 1)}</a>
+                        </br>
                     </#list>
                 </div>
             </#if>
