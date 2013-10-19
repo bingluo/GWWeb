@@ -7,6 +7,8 @@
 <style type="text/css">
 .container {
 	width: 900px;
+    height: auto;
+    min-height: 500px;
 }
 #nav-left-head {
 	padding-bottom: 20px;

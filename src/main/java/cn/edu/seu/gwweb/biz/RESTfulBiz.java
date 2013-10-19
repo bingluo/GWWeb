@@ -18,9 +18,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import cn.edu.seu.gwweb.dto.ArticleBriefDTO;
-import cn.edu.seu.gwweb.dto.ArticleDTO;
-import cn.edu.seu.gwweb.dto.SectionDTO;
+import cn.edu.seu.whitemirror.api.dto.ArticleBriefDTO;
+import cn.edu.seu.whitemirror.api.dto.ArticleDTO;
+import cn.edu.seu.whitemirror.api.dto.SectionDTO;
 
 /**
  * @author snow
@@ -34,7 +34,7 @@ public class RESTfulBiz {
 	private @Value("#{appProp.restUrl}") String restUrl;
 	private @Value("#{appProp.apiKey}") String apiKey;
 	
-	private static final String SECTION_LIST_URL = "sections";
+	private static final String SECTION_LIST_URL = "sections?needArticleList=true";
 	private static final String ARTICLEBRIEF_LIST_URL = "sections/%s/articles?pageIndex=%s&pageSize=%s&orderByCreateDate=%s";
 	private static final String COUNT_ARTICLEBRIEF_URL = "sections/%s/articles/count";
 	private static final String ARTICLE_URL = "sections/%s/articles/%s";

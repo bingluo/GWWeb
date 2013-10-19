@@ -5,10 +5,43 @@
 <title>东南大学公共卫生学院 <#if currentSection ??> : ${currentSection.title}</#if></title>
 <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
 <style type="text/css">
+.container {
+    width: 950px;
+    height: auto;
+    min-height: 550px;
+}
 .pagination li {
     padding-top: 20px;
     list-style: none;
     float: left;
+    font-size: 12px;
+}
+#article-table {
+    width: 900px;
+    margin: 20px;
+    border: #ccc 1px solid;
+}
+#article-table th {
+    padding: 15px 25px 15px 25px;
+    background-color: #ededed;
+    font-size: 14px;
+}
+#article-table th:first-child {
+    text-align: left;
+}
+#article-table td {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+#article-table td:first-child {
+    text-align: left;
+}
+#page-title {
+    padding: 5px 5px 5px 15px;
+    font-size: 15px;
 }
 </style>
 </head>
@@ -54,15 +87,25 @@
 			</div><!--/nav-->
 		</div><!--/header-->
 		<div class="container">
+            <p id="page-title"><#if currentSection ??> ${currentSection.title}</#if></p>
 			<#if articleList ??>
-			<table id="article-table" width="750">
-				<#list articleList as article>
-				<tr>
-					<td width="40%"><a href="${rc.getContextPath()}/sections/${sectionId}/articles/${article.id}">${article.title}</a></td>
-					<td width="20%">${article.author}</td>
-					<td width="20%">${article.createDate?string("yyyy-MM-dd")}</td>
-				</tr>
-				</#list>
+			<table id="article-table">
+                <thead>
+                    <tr>
+                        <th>文章标题</th>
+                        <th>作者</th>
+                        <th>修改日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <#list articleList as article>
+                    <tr>
+                        <td><a href="${rc.getContextPath()}/sections/${sectionId}/articles/${article.id}">${article.title}</a></td>
+                        <td>${article.author}</td>
+                        <td>${article.createDate?string("yyyy-MM-dd")}</td>
+                    </tr>
+                    </#list>
+                </tbody>
 			</table>
 			<div class="article-pagination">
 				<#assign pageTotalNum = (articleListCount / pageSize)?ceiling>

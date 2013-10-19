@@ -5,6 +5,10 @@
     <title>东南大学公共卫生学院 <#if currentSection ??> : ${currentSection.title}</#if></title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
     <style type="text/css">
+    .container {
+        height: auto;
+        min-height: 500px;
+    }
     #article-title {
         font-size: 20px;
         padding-bottom: 15px;
