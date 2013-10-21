@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.edu.seu.gwweb.biz.RESTfulBiz;
-import cn.edu.seu.gwweb.dto.ArticleBriefDTO;
-import cn.edu.seu.gwweb.dto.ArticleDTO;
-import cn.edu.seu.gwweb.dto.SectionDTO;
+import cn.edu.seu.whitemirror.api.dto.ArticleBriefDTO;
+import cn.edu.seu.whitemirror.api.dto.ArticleDTO;
+import cn.edu.seu.whitemirror.api.dto.SectionDTO;
 import cn.edu.seu.gwweb.util.ArticleBriefComparator;
 
 /**
@@ -91,8 +91,8 @@ public class MainController {
 				}
 			}
 			modelMap.put("menuSectionMap", menuSectionMap);
-			List<ArticleBriefDTO> recentlyArticleList = resTfulBiz.getRecentlyArticleList();
-			modelMap.put("recentlyArticleList", recentlyArticleList);
+//			List<ArticleBriefDTO> recentlyArticleList = resTfulBiz.getRecentlyArticleList();
+//			modelMap.put("recentlyArticleList", recentlyArticleList);
 			return "/index.ftl";
 		} catch (Exception ex) {
 			logger.error("Exception in MainController.index, ex: ", ex);
