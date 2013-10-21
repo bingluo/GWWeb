@@ -3,9 +3,9 @@
  */
 package cn.edu.seu.gwweb.util;
 
-import java.util.Comparator;
-
 import cn.edu.seu.whitemirror.api.dto.ArticleBriefDTO;
+
+import java.util.Comparator;
 
 /**
  * @author snow

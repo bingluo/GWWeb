@@ -4,62 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>东南大学公共卫生学院</title>
 <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
+<script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 	<div class="main">
-		<div class="header">
-			<div class="logo"><img src="${rc.getContextPath()}/images/logo.gif" width="270" height="100" /></div>
-			<div class="nav">
-				<div class="litt_nav">
-					<ul>
-						<li><a href="#">设为首页</a></li>
-						<li><a href="#">收藏本站</a></li>
-						<li><a href="#">学院论坛</a></li>
-						<li><a href="#">旧版登录</a></li>
-					</ul>
-				</div><!--/litt_nav-->
-				<div class="main_nav">
-					<#if menuList??>
-					<ul>
-						<li><a href="${rc.getContextPath()}/index">首页</a></li>
-						<#list menuList as menuItemId>
-						<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
-						<li><a href="#" onmouseover="showSelect(${menuItemId_index + 1})">${menuSectionMap[menuItemId].title}</a></li>
-						</#if>
-						</#list>
-					</ul>
-					<#list menuList as menuItemId>
-					<#if menuSectionMap?has_content && menuSectionMap?keys?seq_contains(menuItemId)>
-					<dl class="navtwo navtwo${menuItemId_index + 1}" id="nav${menuItemId_index + 1}">
-					<#assign menuItem = menuSectionMap[menuItemId]>
-						<#if menuItem.articleList??>
-						<#list menuItem.articleList as article>
-						<dd <#if article_index == menuItem.articleList?size - 1>class="noborder"</#if>>
-							<a href="${rc.getContextPath()}/pages/${menuItem.id}/articles/${article.id}">${article.title}</a>
-						</dd>
-						</#list>
-						</#if>
-					</#if>
-					</dl>
-					</#list>
-					</#if>
-				</div><!--/main_nav-->
-			</div><!--/nav-->
-		</div><!--/header-->
+        <#include "common/header.ftl"/>
 		<div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="980" height="200" /></div>
 		<div class="container">
 			<div class="nleft">
 				<div>
 					<div class="update_tit"></div>
 					<ul class="update">
-						<#if recentlyArticleList??>
-						<#list recentlyArticleList as article>
+						<#if 学术报告??>
+						<#list 学术报告.articleList as article>
 						<li>
-							<div class="title"><a href="${rc.getContextPath()}/sections/${article.sectionId}/articles/${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/article/52-${article.id}.html">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
-							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
-							</#if>
+                            <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
+                        </#if>
 						</li>
 						</#list>
 						</#if>
@@ -81,12 +44,12 @@
 			</div><!--/nleft-->
 			<div class="nright">
 				<div class="wraper">
-					<div class="collage_tit" style="cursor: pointer;" <#if collegeNotice??>onclick="navTo(${collegeNotice.id})"</#if>></div>
+					<div class="collage_tit" style="cursor: pointer;" <#if 学院公告??>onclick="navTo(${学院公告.id})"</#if>></div>
 					<ul class="update higher">
-					<#if collegeNotice??>
-						<#list collegeNotice.articleList as article>
+					<#if 学院公告??>
+						<#list 学院公告.articleList as article>
 						<li>
-							<div class="title"><a href="${rc.getContextPath()}/sections/${collegeNotice.id}/articles/${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/article/53-${article.id}.html">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -97,12 +60,12 @@
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
-					<div class="news_tit" style="cursor: pointer;" <#if collegeNews??>onclick="navTo(${collegeNews.id})"</#if>></div>
+					<div class="news_tit" style="cursor: pointer;" <#if 学院新闻??>onclick="navTo(${学院新闻.id})"</#if>></div>
 					<ul class="update higher">
-					<#if collegeNews??>
-						<#list collegeNews.articleList as article>
+					<#if 学院新闻??>
+						<#list 学院新闻.articleList as article>
 						<li>
-							<div class="title"><a href="${rc.getContextPath()}/sections/${collegeNews.id}/articles/${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/article/54-${article.id}.html">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -113,12 +76,12 @@
 					</ul>
 				</div><!--/wraper-->
 				<div class="wraper">
-					<div class="deu_tit" style="cursor: pointer;" <#if teachingAffairs??>onclick="navTo(${teachingAffairs.id})"</#if>></div>
+					<div class="deu_tit" style="cursor: pointer;" <#if 教务信息??>onclick="navTo(${教务信息.id})"</#if>></div>
 					<ul class="update higher">
-					<#if teachingAffairs??>
-						<#list teachingAffairs.articleList as article>
+					<#if 教务信息??>
+						<#list 教务信息.articleList as article>
 						<li>
-							<div class="title"><a href="${rc.getContextPath()}/sections/${teachingAffairs.id}/articles/${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/article/55-${article.id}.html">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -131,10 +94,10 @@
 				<div class="wraper">
 					<div class="student_tit" style="cursor: pointer;" onclick="navToStudentWork()"></div>
 					<ul class="update higher">
-					<#if studentWorkNew??>
-						<#list studentWorkNew.articleList as article>
+					<#if notice??>
+						<#list notice.articleList as article>
 						<li>
-							<div class="title"><a href="${rc.getContextPath()}/sections/${studentWorkNew.id}/articles/${article.id}">${article.title}</a></div>
+							<div class="title"><a href="${rc.getContextPath()}/article/${notice.id}-${article.id}.html">${article.title}</a></div>
 							<div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
 							<div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20" height="11" /></div>
@@ -152,15 +115,23 @@
 		<p>Copyright&nbsp;&nbsp;2013&nbsp;&nbsp;东南大学公共卫生学院&nbsp;&nbsp;版权所有&nbsp;&nbsp;All&nbsp;&nbsp;Right</p>
 	</div>
 <script type="text/javascript">
+//    $(document).ready(function(){
+//        $(":not(.shows)").hover(
+//            function(){
+//                $("dl").css("display","none");
+//            }
+//        );
+//    })
+
 function showSelect(id){
-	for(i=1;i<=7;i++){
-		if(i==id){
-			document.getElementById("nav"+i).style.display="block";
-		}else{
-			document.getElementById("nav"+i).style.display="none";
-		}
-	}
-}
+        for(i=1;i<=7;i++){
+            if(i==id){
+                document.getElementById("nav"+i).style.display="block";
+            }else{
+                document.getElementById("nav"+i).style.display="none";
+            }
+        }
+    }
 function navTo(sectionId) {
     window.location.href = "${rc.getContextPath()}/sections/" + sectionId;
 }
