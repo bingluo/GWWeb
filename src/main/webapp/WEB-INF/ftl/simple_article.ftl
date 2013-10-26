@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>东南大学公共卫生学院 <#if currentSection ??> : ${currentSection.title}</#if></title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
+    <script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
     <style type="text/css">
     .container {
         height: auto;
@@ -57,6 +58,16 @@
     <p>Copyright&nbsp;&nbsp;2013&nbsp;&nbsp;东南大学公共卫生学院&nbsp;&nbsp;版权所有&nbsp;&nbsp;All&nbsp;&nbsp;Right</p>
 </div>
 <script type="text/javascript">
+    $(document).ready(function(){
+        $("div").not($(".main_nav")).hover(function(){
+            $("dl").css("display","none");
+        });
+
+        $(".rootNav li").first().hover(function(){
+            $("dl").css("display","none");
+        });
+
+    });
     function showSelect(id){
         for(i=1;i<=7;i++){
             if(i==id){

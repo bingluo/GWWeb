@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>东南大学公共卫生学院  : 院系概况</title>
+    <title>东南大学公共卫生学院 <#if category ??> : ${category.title}</#if></title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
     <script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
     <style type="text/css">
@@ -45,6 +45,10 @@
             padding-top: 20px;
         }
 
+        .pagination li {
+            display: inline;
+        }
+
     </style>
 </head>
 <body>
@@ -53,36 +57,24 @@
     <div class="container">
         <table>
             <tr>
-                <td valign="top" width="250">
+                <td valign="top" min-width="250">
                     <ul id="nav-left">
                         <li id="nav-left-head">
-                            <img src="${rc.getContextPath()}/images/article_page_list.gif" width="10" height="10"/>${currentSection.title}
+                            <img src="${rc.getContextPath()}/images/article_page_list.gif" width="10"
+                                 height="10"/>${category.title}
                         </li>
-                    <#if currentSection.articleList ??>
-                        <#list currentSection.articleList as article>
-                            <li class="nav-left-item" <#if article.id==currentArticle.id>style="font-weight:bold;" </#if>>
-                                <a href="${rc.getContextPath()}/courseIntro/${article.id}/">${article.title}</a>
+					<#if leftSections ??>
+						<#list leftSections as sectionItem>
+                            <li class="nav-left-item"
+								<#if sectionItem.id==currentSection.id>style="font-weight:bold;"</#if>>
+                                <a href="${rc.getContextPath()}/cat/${category.id}/section/${sectionItem.id}/">${sectionItem.title}</a>
                             </li>
-                        </#list>
-                    </#if>
+						</#list>
+					</#if>
                     </ul>
                 </td>
                 <td valign="top">
-                <#if currentArticle ??>
-                    <p id="article-title">${currentArticle.title}</p>
-                    <p id="article-info">作者：${currentArticle.author} , 修改时间：${currentArticle.createDate?string("yyyy-MM-dd")}</p>
-                    <div id="article-context">
-                    ${currentArticle.context}
-                    </div>
-                    <#if currentArticle.attachmentList??>
-                        <div id="article-attachment">
-                            <p>附件列表：</p>
-                            <#list currentArticle.attachmentList as attachment>
-                                <a href="${attachment}" target="blank">${attachment}</a>
-                            </#list>
-                        </div>
-                    </#if>
-                </#if>
+					nihaoma
                 </td>
             </tr>
         </table>
