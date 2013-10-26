@@ -6,8 +6,10 @@ package cn.edu.seu.gwweb.controller;
 import cn.edu.seu.whitemirror.api.client.ArticleClient;
 import cn.edu.seu.whitemirror.api.client.CategoryClient;
 import cn.edu.seu.whitemirror.api.client.SectionClient;
+import cn.edu.seu.whitemirror.api.dto.ArticleDTO;
 import cn.edu.seu.whitemirror.api.dto.CategoryDTO;
 import cn.edu.seu.whitemirror.api.dto.SectionDTO;
+import cn.edu.seu.whitemirror.api.enums.SectionTypeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -138,6 +140,13 @@ public class MainController {
 				pageIndex = 1;
 			}
 			currentSection.setArticleList(articleClient.paginateArticleBriefBySectionId(currentSection.getId(), pageIndex, PAGE_SIZE, true));
+			if (currentSection.getType()== SectionTypeEnum.valueOf(2)){
+				if (currentSection.getArticleList()!=null&&currentSection.getArticleList().size()>0){
+					Long articleId = currentSection.getArticleList().get(0).getId();
+					ArticleDTO currentArticle = articleClient.findArticleBySectionIdAndArticleId(currentSection.getId(),articleId);
+					modelMap.put("currentArticle",currentArticle);
+				}
+			}
 			modelMap.put("currentSection", currentSection);
 			modelMap.put("articleListCount", articleClient.countArticleBySectionId(currentSection.getId()));
 			modelMap.put("pageSize", PAGE_SIZE);
@@ -170,6 +179,13 @@ public class MainController {
 				pageIndex = 1;
 			}
 			currentSection.setArticleList(articleClient.paginateArticleBriefBySectionId(currentSection.getId(), pageIndex, PAGE_SIZE, true));
+			if (currentSection.getType()== SectionTypeEnum.valueOf(2)){
+				if (currentSection.getArticleList()!=null&&currentSection.getArticleList().size()>0){
+					Long articleId = currentSection.getArticleList().get(0).getId();
+					ArticleDTO currentArticle = articleClient.findArticleBySectionIdAndArticleId(currentSection.getId(),articleId);
+					modelMap.put("currentArticle",currentArticle);
+				}
+			}
 			modelMap.put("currentSection", currentSection);
 			modelMap.put("articleListCount", articleClient.countArticleBySectionId(currentSection.getId()));
 			modelMap.put("pageSize", PAGE_SIZE);

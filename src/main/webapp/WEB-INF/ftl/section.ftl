@@ -75,16 +75,16 @@
                 </td>
                 <td valign="top">
                 <#if currentSection.type.name() == "Exclusive">
-                    <#if article ??>
-                        <p id="article-title">${article.title}</p>
-                        <p id="article-info">作者：${article.author} , 修改时间：${article.createDate?string("yyyy-MM-dd")}</p>
+                    <#if currentArticle ??>
+                        <p id="article-title">${currentArticle.title}</p>
+                        <p id="article-info">作者：${currentArticle.author} , 修改时间：${currentArticle.createDate?string("yyyy-MM-dd")}</p>
                         <div id="article-context">
-                        ${article.context}
+                        ${currentArticle.context}
                         </div>
-                        <#if article.attachmentList??>
+                        <#if currentArticle.attachmentList??>
                             <div id="article-attachment">
                                 <p>附件列表：</p>
-                                <#list article.attachmentList as attachment>
+                                <#list currentArticle.attachmentList as attachment>
                                     <#assign lIndex = attachment?last_index_of("/")>
                                     <a href="${attachment}" target="blank">${attachment?substring(lIndex + 1)}</a>
                                     </br>
