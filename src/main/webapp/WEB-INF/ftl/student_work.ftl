@@ -110,8 +110,9 @@
         <div class="notice_tit"></div>
         <div>
             <ul class="update">
-			<#if 学术报告??>
-				<#list 学术报告.articleList as article>
+			<#if 通知公告??>
+				<#if 通知公告.articleList??>
+				<#list 通知公告.articleList as article>
 					<#if article_index<8>
                         <li>
                             <div class="title"><a href="${article.id}">${article.title}</a></div>
@@ -123,6 +124,7 @@
                         </li>
 					</#if>
 				</#list>
+				</#if>
 			</#if>
             </ul>
         </div>
@@ -133,6 +135,7 @@
         <div>
             <ul class="update">
 			<#if 日常管理??>
+				<#if 日常管理.articleList??>
 				<#list 日常管理.articleList as article>
 					<#if article_index<8>
                         <li>
@@ -145,6 +148,7 @@
                         </li>
 					</#if>
 				</#list>
+				</#if>
 			</#if>
             </ul>
         </div>
@@ -155,6 +159,7 @@
         <div>
             <ul class="update">
 			<#if 党团建设??>
+				<#if 党团建设.articleList??>
 				<#list 党团建设.articleList as article>
 					<#if article_index<8>
                         <li>
@@ -167,6 +172,7 @@
                         </li>
 					</#if>
 				</#list>
+				</#if>
 			</#if>
             </ul>
         </div>
@@ -177,6 +183,7 @@
         <div>
             <ul class="update">
 			<#if 学生活动??>
+				<#if 学生活动.articleList??>
 				<#list 学生活动.articleList as article>
 					<#if article_index<8>
                         <li>
@@ -189,6 +196,7 @@
                         </li>
 					</#if>
 				</#list>
+				</#if>
 			</#if>
             </ul>
         </div>
@@ -199,6 +207,7 @@
         <div>
             <ul class="update">
 			<#if 升学实习就业??>
+				<#if 升学实习就业.articleList??>
 				<#list 升学实习就业.articleList as article>
 					<#if article_index<8>
                         <li>
@@ -211,6 +220,7 @@
                         </li>
 					</#if>
 				</#list>
+				</#if>
 			</#if>
             </ul>
         </div>
@@ -221,6 +231,7 @@
         <div>
             <ul class="update">
 			<#if 研究生??>
+				<#if 研究生.articleList??>
 				<#list 研究生.articleList as article>
 					<#if article_index<8>
                         <li>
@@ -233,6 +244,7 @@
                         </li>
 					</#if>
 				</#list>
+				</#if>
 			</#if>
             </ul>
         </div>
