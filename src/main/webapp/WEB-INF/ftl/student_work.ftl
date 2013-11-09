@@ -104,7 +104,7 @@
     </div>
     <!--/nav-->
 </div>
-<div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="794" height="150"/></div>
+<div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="980" height="200"/></div>
 <div class="container">
     <div class="wraper">
         <div class="notice_tit"></div>
@@ -249,14 +249,10 @@
             </ul>
         </div>
     </div>
-    <!--wraper-->
-    <div class="friend_link">
-        <form name="myForm">
-            <select>
-                <option selected="selected">友情文字链接站点</option>
-            </select>
-        </form>
-    </div>
+</div>
+<div class="footer">
+    <p class="p1">中国&nbsp;&nbsp;&#8226;&nbsp;南京&nbsp;&#8226;&nbsp;东南大学公共卫生学院</p>
+    <p>Copyright&nbsp;&nbsp;2013&nbsp;&nbsp;东南大学公共卫生学院&nbsp;&nbsp;版权所有&nbsp;&nbsp;All&nbsp;&nbsp;Right</p>
 </div>
 <script type="text/javascript">
     $(document).ready(function(){

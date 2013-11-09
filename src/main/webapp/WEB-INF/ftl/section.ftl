@@ -44,12 +44,44 @@
         #article-attachment {
             padding-top: 20px;
         }
-
+        .pagination {
+            padding-left: 100px;;
+        }
         .pagination li {
+      ;
             padding-top: 20px;
             list-style: none;
             float: left;
             font-size: 12px;
+            padding-bottom: 15px;;
+        }
+
+        #article-table {
+            width: 700px;
+            margin: 20px;
+            border: #ccc 1px solid;
+        }
+
+        #article-table th {
+            padding: 15px 25px 15px 25px;
+            background-color: #ededed;
+            font-size: 14px;
+        }
+
+        #article-table th:first-child {
+            text-align: left;
+        }
+
+        #article-table td {
+            padding: 12px;
+            font-size: 14px;
+            text-align: center;
+            border-top: 1px solid #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #article-table td:first-child {
+            text-align: left;
         }
     </style>
 </head>
@@ -57,9 +89,9 @@
 <div class="main">
 <#include "common/header.ftl" />
     <div class="container">
-        <table>
+        <table width="100%">
             <tr>
-                <td valign="top" min-width="250">
+                <td valign="top" min-width="350px">
                     <ul id="nav-left">
                         <li id="nav-left-head">
                             <img src="${rc.getContextPath()}/images/article_page_list.gif" width="10"
@@ -75,7 +107,7 @@
                     </#if>
                     </ul>
                 </td>
-                <td valign="top">
+                <td valign="top" align="right">
                 <#if currentSection.type.name() == "Exclusive">
                     <#if currentArticle ??>
                         <p id="article-title">${currentArticle.title}</p>
@@ -95,7 +127,6 @@
                         </#if>
                     </#if>
                 <#else>
-                    <p id="page-title"><#if currentSection ??> ${currentSection.title}</#if></p>
                     <#if currentSection.articleList??>
                         <table id="article-table">
                             <thead>
