@@ -6,11 +6,34 @@
     <title>东南大学公共卫生学院</title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
     <script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="${rc.getContextPath()}/css/flexslider.css" type="text/css">
+    <script src="${rc.getContextPath()}/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				controlNav: false,
+				directionNav: false,
+				animation: "slide"
+            });
+		});
+	</script>
 </head>
 <body>
 <div class="main">
 <#include "common/header.ftl"/>
-    <div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="980" height="200"/></div>
+    <div class="post flexslider" style="width:980px;height:200px;border:0px">
+    	<ul class="slides">
+        	<li>
+            	<img src="${rc.getContextPath()}/images/post.jpg"/>
+            </li>
+            <li>
+            	<img src="${rc.getContextPath()}/images/post2.jpg"/>
+            </li>
+            <li>
+                <img src="${rc.getContextPath()}/images/post3.jpg"/>
+            </li>
+		</ul>
+	</div>
     <div class="container">
         <div class="nleft">
             <div>
@@ -150,7 +173,7 @@
     <p>Copyright&nbsp;&nbsp;2013&nbsp;&nbsp;东南大学公共卫生学院&nbsp;&nbsp;版权所有&nbsp;&nbsp;All&nbsp;&nbsp;Right</p>
 </div>
 <script type="text/javascript">
-    $(document).ready(function(){
+	$(document).ready(function(){
         $("div").not($(".main_nav")).hover(function(){
             $("dl").css("display","none");
         });
