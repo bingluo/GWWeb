@@ -8,6 +8,16 @@
     <script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="${rc.getContextPath()}/css/flexslider.css" type="text/css">
     <script src="${rc.getContextPath()}/js/jquery.flexslider-min.js"></script>
+    <style type="text/css">
+        .flexslider {
+            margin-top: 10px;
+            margin-bottom: 0;
+            width: 980px;
+            height: 200px;
+            border: 0;
+            z-index: -1;
+        }
+    </style>
     <script type="text/javascript" charset="utf-8">
 		$(window).load(function() {
 			$('.flexslider').flexslider({
@@ -21,7 +31,7 @@
 <body>
 <div class="main">
 <#include "common/header.ftl"/>
-    <div class="post flexslider" style="width:980px;height:200px;border:0px">
+    <div class="flexslider">
     	<ul class="slides">
         	<li>
             	<img src="${rc.getContextPath()}/images/post.jpg"/>
@@ -37,9 +47,9 @@
     <div class="container">
         <div class="nleft">
             <div>
-                <div class="update_tit"></div>
+            <#if 学术报告??>
+                <div class="update_tit" style="cursor: pointer;" <#if 学术报告??>onclick="navTo(${学术报告.id})"</#if>></div>
                 <ul class="update">
-                <#if 学术报告??>
                     <#list 学术报告.articleList as article>
                         <#if article_index<8>
                             <li>
@@ -54,8 +64,8 @@
                             </li>
                         </#if>
                     </#list>
-                </#if>
                 </ul>
+            </#if>
             </div>
             <div>
                 <div class="pic_tit"></div>
