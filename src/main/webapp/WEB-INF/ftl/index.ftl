@@ -170,7 +170,7 @@
         }
     }
     function navTo(sectionId) {
-        window.location.href = "${rc.getContextPath()}/sections/" + sectionId;
+        window.location.href = "${rc.getContextPath()}/cat/1/section/" + sectionId+"/";
     }
     function navToStudentWork() {
         window.location.href = "${rc.getContextPath()}/student_work";
