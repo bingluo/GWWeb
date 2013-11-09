@@ -56,6 +56,11 @@ public class MainController {
 	@Autowired
 	private CategoryClient categoryClient;
 
+    @RequestMapping(value = "/")
+    public String root() {
+        return "redirect:/index";
+    }
+
 	@RequestMapping(value = "/index")
 	public String index(ModelMap modelMap) {
 		try {
