@@ -45,7 +45,6 @@
     	<groupId>tomcat</groupId>
     	<artifactId>servlet-api</artifactId>
     	<version>5.5.23</version>
-    	<scope>test</scope>
     </dependency>
     <dependency>
     	<groupId>ch.qos.logback</groupId>

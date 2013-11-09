@@ -10,7 +10,7 @@ img{border:0;-ms-interpolation-mode:bicubic;}
 
 .main{ width:980px; height:900px; margin:0 auto;}
 .header{ width:980px; height:100px }
-.header .logo{float:left; width:274px; height:100px;}
+.header .logo{float:left; width:270px; height:100px;}
 .header .nav{float:left; width:706px; height:100px;}
 .litt_nav{ width:706px; height:30px; background:#9e7e6f;}
 .litt_nav ul{float:right; height:30px; margin-right:100px; display:inline;}
