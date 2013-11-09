@@ -46,9 +46,11 @@
         }
 
         .pagination li {
-            display: inline;
+            padding-top: 20px;
+            list-style: none;
+            float: left;
+            font-size: 12px;
         }
-
     </style>
 </head>
 <body>
