@@ -37,9 +37,11 @@
         <#if article ??>
             <p id="article-title">${article.title}</p>
             <p id="article-info">作者：${article.author} , 修改时间：${article.createDate?string("yyyy-MM-dd")}</p>
+            <#if article.context??>
             <div id="article-context">
             ${article.context}
             </div>
+            </#if>
             <#if article.attachmentList??>
                 <div id="article-attachment">
                     <p>附件列表：</p>

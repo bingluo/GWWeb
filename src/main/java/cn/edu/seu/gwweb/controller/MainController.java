@@ -3,6 +3,7 @@
  */
 package cn.edu.seu.gwweb.controller;
 
+import cn.edu.seu.gwweb.util.PositionComparator;
 import cn.edu.seu.whitemirror.api.client.ArticleClient;
 import cn.edu.seu.whitemirror.api.client.CategoryClient;
 import cn.edu.seu.whitemirror.api.client.SectionClient;
@@ -19,10 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author snow
@@ -119,6 +117,7 @@ public class MainController {
 		sectionDTO.setId(TEACHER_INTRO_SECTION);
 		sections.add(sectionDTO);
 		List<SectionDTO> positions = sectionClient.getSectionsByCategoryId(TEACHER_INTRO_CATEGORY,true);
+        Collections.sort(positions, new PositionComparator());
 		CategoryDTO categoryDTO = new CategoryDTO();
 		categoryDTO.setId(Long.valueOf(3));
 		categoryDTO.setTitle("师资队伍");
