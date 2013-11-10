@@ -6,17 +6,50 @@
     <title>东南大学公共卫生学院</title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/main.css">
     <script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="${rc.getContextPath()}/css/flexslider.css" type="text/css">
+    <script src="${rc.getContextPath()}/js/jquery.flexslider-min.js"></script>
+    <style type="text/css">
+        .flexslider {
+            margin-top: 10px;
+            margin-bottom: 0;
+            width: 980px;
+            height: 200px;
+            border: 0;
+            z-index: -1;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				controlNav: false,
+				directionNav: false,
+				animation: "slide"
+            });
+		});
+	</script>
 </head>
 <body>
 <div class="main">
 <#include "common/header.ftl"/>
-    <div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="980" height="200"/></div>
+    <div class="flexslider">
+    	<ul class="slides">
+        	<li>
+            	<img src="${rc.getContextPath()}/images/post.jpg"/>
+            </li>
+            <li>
+            	<img src="${rc.getContextPath()}/images/post2.jpg"/>
+            </li>
+            <li>
+                <img src="${rc.getContextPath()}/images/post3.jpg"/>
+            </li>
+		</ul>
+	</div>
     <div class="container">
         <div class="nleft">
             <div>
-                <div class="update_tit"></div>
+            <#if 学术报告??>
+                <div class="update_tit" style="cursor: pointer;" <#if 学术报告??>onclick="navTo(${学术报告.id})"</#if>></div>
                 <ul class="update">
-                <#if 学术报告??>
                     <#list 学术报告.articleList as article>
                         <#if article_index<8>
                             <li>
@@ -31,8 +64,8 @@
                             </li>
                         </#if>
                     </#list>
-                </#if>
                 </ul>
+            </#if>
             </div>
             <div>
                 <div class="pic_tit"></div>
@@ -150,7 +183,7 @@
     <p>Copyright&nbsp;&nbsp;2013&nbsp;&nbsp;东南大学公共卫生学院&nbsp;&nbsp;版权所有&nbsp;&nbsp;All&nbsp;&nbsp;Right</p>
 </div>
 <script type="text/javascript">
-    $(document).ready(function(){
+	$(document).ready(function(){
         $("div").not($(".main_nav")).hover(function(){
             $("dl").css("display","none");
         });
@@ -170,7 +203,7 @@
         }
     }
     function navTo(sectionId) {
-        window.location.href = "${rc.getContextPath()}/sections/" + sectionId;
+        window.location.href = "${rc.getContextPath()}/cat/1/section/" + sectionId+"/";
     }
     function navToStudentWork() {
         window.location.href = "${rc.getContextPath()}/student_work";
