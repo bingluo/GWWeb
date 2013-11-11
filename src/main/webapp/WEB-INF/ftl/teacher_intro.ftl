@@ -25,28 +25,18 @@
         #nav-left-head {
             font-size: 15px;
         }
-
-        #article-title {
-            font-size: 20px;
-            padding-bottom: 15px;
-        }
-
-        #article-info {
-            font-size: 15px;
-            font-style: italic;
-            padding-bottom: 15px;
-        }
-
-        #article-context {
-            font-size: 14px;
-        }
-
-        #article-attachment {
-            padding-top: 20px;
-        }
-
         .pagination li {
             display: inline;
+        }
+
+        .position {
+            font-size: 15px;
+            margin-left: 50px;
+            margin-bottom:20px;
+        }
+
+        .position-table {
+            margin-top: 10px;;
         }
 
     </style>
@@ -74,7 +64,28 @@
                     </ul>
                 </td>
                 <td valign="top">
-					nihaoma
+                    <#if positions??>
+					<#list positions as position>
+                        <div class="position">
+					    ${position.title}
+                        <#if position.articleList ??>
+                            <table width="700px" class="position-table">
+                                <tr>
+                                <#list position.articleList as teacher>
+                                    <td>
+                                        <a href="${rc.getContextPath()}/article/${position.id}-${teacher.id}.html">${teacher.title}</a>
+                                    </td>
+                                <#if teacher_index != 0 && (teacher_index + 1) % 5 == 0>
+                                </tr>
+                                <tr>
+                                </#if>
+                                </#list>
+                                </tr>
+                            </table>
+                        </#if>
+                        </div>
+					</#list>
+                    </#if>
                 </td>
             </tr>
         </table>
