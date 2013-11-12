@@ -101,7 +101,11 @@
                         <#list sectionList as sectionItem>
                             <li class="nav-left-item"
                                 <#if sectionItem.id==currentSection.id>style="font-weight:bold;"</#if>>
-                                <a href="${rc.getContextPath()}/cat/${category.id}/section/${sectionItem.id}/">${sectionItem.title}</a>
+								<#if sectionItem.type?? && sectionItem.type.name() == "ExternalLink">
+									<a href="${sectionItem.extra}">${sectionItem.title}</a>
+								<#else>
+                                	<a href="${rc.getContextPath()}/cat/${category.id}/section/${sectionItem.id}/">${sectionItem.title}</a>
+								</#if>
                             </li>
                         </#list>
                     </#if>

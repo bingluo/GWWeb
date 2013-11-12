@@ -61,7 +61,11 @@
                         <#list sections as section>
                             <#assign listCount=listCount+1>
                             <dd <#if listCount==sections?size>class="noborder"</#if>>
-                                <a href="${rc.getContextPath()}/cat/${key}/section/${section.id}/">${section.title}</a>
+								<#if section.type?? && section.type.name() == "ExternalLink">
+                                    <a href="${section.extra}">${section.title}</a>
+								<#else>
+                                    <a href="${rc.getContextPath()}/cat/${key}/section/${section.id}/">${section.title}</a>
+								</#if>
                             </dd>
                         </#list>
                     </#if>
