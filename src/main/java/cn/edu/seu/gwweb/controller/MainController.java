@@ -44,6 +44,7 @@ public class MainController {
 	private static final Long TEACHER_TEAM = Long.valueOf(3);
 	private static final Long TEACHER_INTRO_SECTION = Long.valueOf(41);
 	private static final Long TEACHER_INTRO_CATEGORY = Long.valueOf(14);
+	private static final Long PARTNER_SITE_CATEGORY = Long.valueOf(17);
 
 	@Autowired
 	private SectionClient sectionClient;
@@ -67,11 +68,14 @@ public class MainController {
 			List<SectionDTO> indexSections = sectionClient.getSectionsByCategoryId(INDEX_CATEGORY_ID, true);
             /*通告公告（学生工作category）10篇文章获取*/
 			SectionDTO studentWork = sectionClient.findSectionBySectionId(NOTICE);
+			/*友情链接*/
+			List<SectionDTO> partnerSites = sectionClient.getSectionsByCategoryId(PARTNER_SITE_CATEGORY,false);
 
 			for (SectionDTO section : indexSections) {
 				modelMap.put(section.getTitle(), section);
 			}
 			modelMap.put("notice", studentWork);
+			modelMap.put("partnerSites",partnerSites);
 
 			return "/index.ftl";
 		} catch (Exception ex) {
@@ -219,7 +223,8 @@ public class MainController {
 					categoryDTO.getId() == POSTGRADUATED_STUDENT_PY_CATEGORY ||
 					categoryDTO.getId() == PARTY_WORK_CATEGORY ||
 					categoryDTO.getId() == UNION_WORK_CATEGORY ||
-					categoryDTO.getId() == TEACHER_INTRO_CATEGORY) {
+					categoryDTO.getId() == TEACHER_INTRO_CATEGORY||
+					categoryDTO.getId() == PARTNER_SITE_CATEGORY) {
 				categories.remove(i--);
 			} else {
 				idList.add(categoryDTO.getId());

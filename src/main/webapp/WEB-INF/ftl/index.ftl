@@ -74,8 +74,13 @@
                 </div>
                 <div class="friend_link">
                     <form name="myForm">
-                        <select>
+                        <select id="partnerSites">
                             <option selected="selected">友情文字链接站点</option>
+							<#if partnerSites??>
+								<#list partnerSites as partnerSite>
+                                <option value="${partnerSite.extra}">${partnerSite.title}</option>
+								</#list>
+							</#if>
                         </select>
                     </form>
                 </div>
@@ -192,6 +197,11 @@
             $("dl").css("display","none");
         });
 
+        $("#partnerSites").change(function(){
+			if($(this).get(0).selectedIndex != 0){
+                location.href = $(this).val();
+			}
+		});
     });
     function showSelect(id) {
         for (i = 1; i <= 7; i++) {
@@ -208,7 +218,6 @@
     function navToStudentWork() {
         window.location.href = "${rc.getContextPath()}/student_work";
     }
-
 </script>
 </body>
 </html>
