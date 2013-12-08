@@ -163,12 +163,17 @@
 
     });
     function showSelect(id) {
-        for (i = 1; i <= 7; i++) {
+        for (i = 1; i <= 8; i++) {
             if (i == id) {
                 document.getElementById("nav" + i).style.display = "block";
             } else {
                 document.getElementById("nav" + i).style.display = "none";
             }
+        }
+    }
+    function clearList() {
+        for(i=1;i<8;i++){
+            document.getElementById("nav" + i).style.display = "none";
         }
     }
 </script>
