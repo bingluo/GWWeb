@@ -3,10 +3,12 @@
  */
 package cn.edu.seu.gwweb.controller;
 
+import cn.edu.seu.gwweb.util.ArticleBriefComparator;
 import cn.edu.seu.gwweb.util.PositionComparator;
 import cn.edu.seu.whitemirror.api.client.ArticleClient;
 import cn.edu.seu.whitemirror.api.client.CategoryClient;
 import cn.edu.seu.whitemirror.api.client.SectionClient;
+import cn.edu.seu.whitemirror.api.dto.ArticleBriefDTO;
 import cn.edu.seu.whitemirror.api.dto.ArticleDTO;
 import cn.edu.seu.whitemirror.api.dto.CategoryDTO;
 import cn.edu.seu.whitemirror.api.dto.SectionDTO;
@@ -120,7 +122,12 @@ public class MainController {
 		sectionDTO.setCategoryId(TEACHER_TEAM);
 		sectionDTO.setId(TEACHER_INTRO_SECTION);
 		sections.add(sectionDTO);
-		List<SectionDTO> positions = sectionClient.getSectionsByCategoryId(TEACHER_INTRO_CATEGORY,true);
+		List<SectionDTO> positions = sectionClient.getSectionsByCategoryId(TEACHER_INTRO_CATEGORY,false);
+        for(SectionDTO position : positions){
+            List<ArticleBriefDTO> list = articleClient.paginateArticleBriefBySectionId(position.getId(), 1, 200, false);
+            Collections.sort(list,new ArticleBriefComparator());
+            position.setArticleList(list);
+        }
         Collections.sort(positions, new PositionComparator());
 		CategoryDTO categoryDTO = new CategoryDTO();
 		categoryDTO.setId(Long.valueOf(3));
@@ -207,7 +214,9 @@ public class MainController {
 	private void navibar(ModelMap modelMap) {
         /*第一个section：courseIntro文章获取*/
 		SectionDTO courseIntro = sectionClient.findSectionBySectionId(COURSE_INTRO_SECTION);
-		courseIntro.setArticleList(articleClient.paginateArticleBriefBySectionId(COURSE_INTRO_SECTION, 1, PAGE_SIZE, false));
+        List<ArticleBriefDTO> list = articleClient.paginateArticleBriefBySectionId(COURSE_INTRO_SECTION, 1, PAGE_SIZE, false);
+		Collections.sort(list,new ArticleBriefComparator());
+        courseIntro.setArticleList(list);
 		modelMap.put("courseIntro", courseIntro);
 
         /*目录7个category获取*/
@@ -252,7 +261,9 @@ public class MainController {
 	@RequestMapping(value = "/courseIntro/{articleId}")
 	public String courseIntro(@PathVariable Long articleId, ModelMap modelMap) {
 		navibar(modelMap);
-		modelMap.put("currentSection", sectionClient.findSectionBySectionId(COURSE_INTRO_SECTION));
+        SectionDTO currentSection = sectionClient.findSectionBySectionId(COURSE_INTRO_SECTION);
+        Collections.sort(currentSection.getArticleList(),new ArticleBriefComparator());
+		modelMap.put("currentSection", currentSection);
 		modelMap.put("currentArticle", articleClient.findArticleBySectionIdAndArticleId(COURSE_INTRO_SECTION, articleId));
 		return "course_intro.ftl";
 	}
@@ -261,6 +272,7 @@ public class MainController {
 	public String courseIntro(ModelMap modelMap) {
 		navibar(modelMap);
 		SectionDTO currentSection = sectionClient.findSectionBySectionId(COURSE_INTRO_SECTION);
+        Collections.sort(currentSection.getArticleList(),new ArticleBriefComparator());
 		modelMap.put("currentSection", currentSection);
 		modelMap.put("currentArticle", articleClient.findArticleBySectionIdAndArticleId(COURSE_INTRO_SECTION, currentSection.getArticleList().get(0).getId()));
 		return "course_intro.ftl";

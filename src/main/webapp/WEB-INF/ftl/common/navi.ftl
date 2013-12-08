@@ -3,7 +3,7 @@
         <ul>
             <li><a href="#">设为首页</a></li>
             <li><a href="#">收藏本站</a></li>
-            <li><a href="#">学院论坛</a></li>
+            <li><a href="${rc.getContextPath()}/en_site">English</a></li>
             <li><a href="#">旧版登录</a></li>
         </ul>
     </div>
