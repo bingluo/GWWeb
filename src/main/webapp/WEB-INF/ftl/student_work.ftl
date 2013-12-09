@@ -5,8 +5,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>东南大学公共卫生学院 : 学生工作</title>
     <link rel="stylesheet" type="text/css" href="${rc.getContextPath()}/css/student_work.css">
+    <link rel="stylesheet" href="${rc.getContextPath()}/css/flexslider.css" type="text/css">
     <script type="text/javascript" src="${rc.getContextPath()}/js/jquery-1.10.2.min.js"></script>
+    <script src="${rc.getContextPath()}/js/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="${rc.getContextPath()}/js/base.js"></script>
+    <style type="text/css">
+        .flexslider {
+            margin-top: 10px;
+            margin-bottom: 0;
+            width: 980px;
+            height: 200px;
+            border: 0;
+            z-index: -1;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                controlNav: false,
+                directionNav: false,
+                animation: "fade"
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="main">
@@ -14,7 +35,22 @@
     <div class="logo"><img src="${rc.getContextPath()}/images/sw_seu_logo.gif" width="270" height="100"/></div>
 	<#include "common/navi.ftl"/>
 </div>
-<div class="post"><img src="${rc.getContextPath()}/images/post.jpg" width="980" height="200"/></div>
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="${rc.getContextPath()}/images/slider-1.png"/>
+            </li>
+            <li>
+                <img src="${rc.getContextPath()}/images/slider-2.png"/>
+            </li>
+            <li>
+                <img src="${rc.getContextPath()}/images/slider-3.png"/>
+            </li>
+            <li>
+                <img src="${rc.getContextPath()}/images/slider-4.png"/>
+            </li>
+        </ul>
+    </div>
 <div class="container">
     <div class="wraper">
         <div class="notice_tit" style="cursor: pointer;" <#if 通知公告??>onclick="navTo(${通知公告.id})"</#if>></div>

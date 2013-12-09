@@ -24,7 +24,7 @@
 			$('.flexslider').flexslider({
 				controlNav: false,
 				directionNav: false,
-				animation: "slide"
+				animation: "fade"
             });
 		});
 	</script>
@@ -35,13 +35,16 @@
     <div class="flexslider">
     	<ul class="slides">
         	<li>
-            	<img src="${rc.getContextPath()}/images/post.jpg"/>
+            	<img src="${rc.getContextPath()}/images/slider-1.png"/>
             </li>
             <li>
-            	<img src="${rc.getContextPath()}/images/post2.jpg"/>
+            	<img src="${rc.getContextPath()}/images/slider-2.png"/>
             </li>
             <li>
-                <img src="${rc.getContextPath()}/images/post3.jpg"/>
+                <img src="${rc.getContextPath()}/images/slider-3.png"/>
+            </li>
+            <li>
+                <img src="${rc.getContextPath()}/images/slider-4.png"/>
             </li>
 		</ul>
 	</div>
