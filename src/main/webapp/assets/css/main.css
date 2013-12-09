@@ -35,13 +35,13 @@ img{border:0;-ms-interpolation-mode:bicubic;}
 .navtwo dd a:link,.navtwo dd a:visited{color:#2b2b2b;}
 .navtwo dd a:hover{ text-decoration:none;}
 .post{ width:980px; height:200px; margin-top:14px;}
-.container{ width:750px; height:500px; margin:10px auto 0; font-size:12px;}
-.container .nleft{float:left; width:225px; height:500px; margin:0 6px; display:inline; }
+.container{ width:960px; height:500px; margin:10px auto 0; font-size:12px;}
+.container .nleft{float:left; width:310px; height:500px; /*margin:0 6px;*/ display:inline; }
 .container .nleft .update_tit{width:225px; height:25px; margin-top:27px; background:url(../images/report.gif) no-repeat 0 0;}
-.update{ width:225px; padding-top:6px;}
+.update{ width:310px; padding-top:6px;}
 .higher{ margin-top:8px;}
-.update li{width:220px; height:20px; padding-left:5px; line-height:20px; background:url(../images/list.gif) no-repeat 1px 8px;}
-.title{ float:left; width:160px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.update li{width:310px; height:20px; padding-left:5px; line-height:20px; background:url(../images/list.gif) no-repeat 1px 8px;}
+.title{ float:left; width:250px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 .pdate{float:left;width:32px; height:20px; padding-left:8px; color:#f4e258;}
 .gray{ color:#000;}
 .new{ float:left;}
@@ -49,8 +49,8 @@ img{border:0;-ms-interpolation-mode:bicubic;}
 .pic{ width:202px; height:138px; border:1px solid #6eaace; margin-top:18px;}
 .friend_link{ margin-top:25px;}
 .friend_link select{ border:1px solid #d3c5bc; color:#f4e258;}
-.container .nright{float:left; width:500px; height:500px; padding-left:10px;}
-.container .nright .wraper{float:left; width:250px; margin-top:25px; display:inline;}
+.container .nright{float:left; width:640px; height:500px; /*padding-left:10px;*/}
+.container .nright .wraper{float:left; width:310px; margin-top:25px; display:inline; padding-left: 10px;}
 .container .nright .collage_tit{ width:200px; height:18px; background:url(../images/collage.gif) no-repeat 0 0;}
 .container .nright .news_tit{width:200px; height:18px; background:url(../images/collagenews.gif) no-repeat 0 0;}
 .container .nright .deu_tit{ width:200px; height:17px; background:url(../images/eduinfo.gif) no-repeat 0 0;}

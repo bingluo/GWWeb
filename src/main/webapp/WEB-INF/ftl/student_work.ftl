@@ -25,7 +25,7 @@
 				<#list 通知公告.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${通知公告.id}-${article.id}.html">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${通知公告.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
@@ -49,7 +49,7 @@
 				<#list 日常管理.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${日常管理.id}-${article.id}.html">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${日常管理.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
@@ -73,7 +73,7 @@
 				<#list 党团建设.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${党团建设.id}-${article.id}.html">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${党团建设.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
@@ -97,7 +97,7 @@
 				<#list 学生活动.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${学生活动.id}-${article.id}.html">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${学生活动.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
@@ -121,7 +121,7 @@
 				<#list 升学实习就业.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${升学实习就业.id}-${article.id}.html">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${升学实习就业.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
@@ -145,7 +145,7 @@
 				<#list 研究生.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${研究生.id}-${article.id}.html">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${研究生.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"

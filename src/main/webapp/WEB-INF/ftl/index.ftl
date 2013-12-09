@@ -55,7 +55,7 @@
                         <#if article_index<8>
                             <li>
                                 <div class="title"><a
-                                        href="${rc.getContextPath()}/article/52-${article.id}.html">${article.title}</a>
+                                        href="${rc.getContextPath()}/article/52-${article.id}.html" title="${article.title}">${article.title}</a>
                                 </div>
                                 <div class="pdate">${article.createDate?string("MM-dd")}</div>
                                 <#if article_index <= 1>
@@ -97,7 +97,7 @@
                         <#if article_index<8>
                             <li>
                                 <div class="title"><a
-                                        href="${rc.getContextPath()}/article/53-${article.id}.html">${article.title}</a>
+                                        href="${rc.getContextPath()}/article/53-${article.id}.html" title="${article.title}">${article.title}</a>
                                 </div>
                                 <div class="pdate">${article.createDate?string("MM-dd")}</div>
                                 <#if article_index <= 1>
@@ -119,7 +119,7 @@
                         <#if article_index<8>
                             <li>
                                 <div class="title"><a
-                                        href="${rc.getContextPath()}/article/54-${article.id}.html">${article.title}</a>
+                                        href="${rc.getContextPath()}/article/54-${article.id}.html" title="${article.title}">${article.title}</a>
                                 </div>
                                 <div class="pdate">${article.createDate?string("MM-dd")}</div>
                                 <#if article_index <= 1>
@@ -141,7 +141,7 @@
                         <#if article_index<8>
                             <li>
                                 <div class="title"><a
-                                        href="${rc.getContextPath()}/article/55-${article.id}.html">${article.title}</a>
+                                        href="${rc.getContextPath()}/article/55-${article.id}.html" title="${article.title}">${article.title}</a>
                                 </div>
                                 <div class="pdate">${article.createDate?string("MM-dd")}</div>
                                 <#if article_index <= 1>
@@ -163,7 +163,7 @@
                         <#if article_index<8>
                             <li>
                                 <div class="title"><a
-                                        href="${rc.getContextPath()}/article/${notice.id}-${article.id}.html">${article.title}</a>
+                                        href="${rc.getContextPath()}/article/${notice.id}-${article.id}.html" title="${article.title}">${article.title}</a>
                                 </div>
                                 <div class="pdate">${article.createDate?string("MM-dd")}</div>
                                 <#if article_index <= 1>
