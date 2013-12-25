@@ -101,15 +101,15 @@
     </div>
     <!--wraper-->
     <div class="wraper">
-        <div class="party_tit" style="cursor: pointer;" <#if 党团建设??>onclick="navTo(${党团建设.id})"</#if>></div>
+        <div class="party_tit" style="cursor: pointer;" <#if 学生党团建设??>onclick="navTo(${学生党团建设.id})"</#if>></div>
         <div>
             <ul class="update">
-			<#if 党团建设??>
-				<#if 党团建设.articleList??>
-				<#list 党团建设.articleList as article>
+			<#if 学生党团建设??>
+				<#if 学生党团建设.articleList??>
+				<#list 学生党团建设.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${党团建设.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${学生党团建设.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
