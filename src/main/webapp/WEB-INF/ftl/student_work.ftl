@@ -173,15 +173,15 @@
     </div>
     <!--wraper-->
     <div class="wraperdown">
-        <div class="master_tit" style="cursor: pointer;" <#if 研究生??>onclick="navTo(${研究生.id})"</#if>></div>
+        <div class="master_tit" style="cursor: pointer;" <#if 研究生工作??>onclick="navTo(${研究生工作.id})"</#if>></div>
         <div>
             <ul class="update">
-			<#if 研究生??>
-				<#if 研究生.articleList??>
-				<#list 研究生.articleList as article>
+			<#if 研究生工作??>
+				<#if 研究生工作.articleList??>
+				<#list 研究生工作.articleList as article>
 					<#if article_index<8>
                         <li>
-                            <div class="title"><a href="${rc.getContextPath()}/article/${研究生.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
+                            <div class="title"><a href="${rc.getContextPath()}/article/${研究生工作.id}-${article.id}.html" title="${article.title}">${article.title}</a></div>
                             <div class="pdate">${article.createDate?string("MM-dd")}</div>
 							<#if article_index <= 1>
                                 <div class="new"><img src="${rc.getContextPath()}/images/news.gif" width="20"
